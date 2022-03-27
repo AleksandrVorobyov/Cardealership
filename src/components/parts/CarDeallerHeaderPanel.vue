@@ -4,26 +4,36 @@ section.header__panel
     ul.header__panel-list
       li.header__panel-list-item(v-for="item in info.list", :key="item")
         a.header__panel-list-item-link(v-if="item.typeLink", :href="item.link")
-          img(:src="require('@/assets/img/' + item.img)")
-          span {{ item.text }}
+          SvgIcon(:name="item.img")
+          span(:class="item.plusClass") {{ item.text }}
         h4.header__panel-list-item-title(v-else)
-          img(:src="require('@/assets/img/' + item.img)")
+          SvgIcon(:name="item.img")
           span {{ item.text }}
 </template>
 <script>
+import SvgIcon from "../SvgIcon.vue";
+
 export default {
   props: {
     info: Object,
+  },
+  components: {
+    SvgIcon,
   },
 };
 </script>
 <style scoped lang="scss">
 .header__panel {
   position: relative;
+  display: none;
   padding: 12px 0;
   overflow: hidden;
   z-index: 500;
   background: var(--gray400);
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
 
 .header__panel-list {
@@ -53,14 +63,19 @@ export default {
     transition: color 0.3s ease;
   }
 
-  img {
+  svg {
     position: relative;
     width: 18px;
     height: 18px;
     object-fit: contain;
     object-position: center;
+    fill: var(--gray);
     transition: fill 0.3s ease;
   }
+}
+
+.header__panel-list-item-link--decor {
+  text-decoration: underline;
 }
 
 .header__panel-list-item-link:hover {
@@ -68,7 +83,7 @@ export default {
     color: var(--red);
   }
 
-  img {
+  svg {
     fill: var(--red);
   }
 }

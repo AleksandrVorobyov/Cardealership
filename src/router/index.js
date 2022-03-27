@@ -11,7 +11,22 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue')
-  }
+  },
+  {
+    path: '/techCenter',
+    name: 'TechCenter',
+    component: () => import('../views/TechCenter.vue')
+  },
+  {
+    path: '/reviews',
+    name: 'Reviews',
+    component: () => import('../views/Reviews.vue')
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/Contact.vue')
+  },
 ]
 
 const router = createRouter({

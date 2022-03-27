@@ -1,5 +1,5 @@
 <template lang="pug">
-.home-page
+.contact-page
   CarDeallerHeader
 </template>
 
@@ -7,7 +7,7 @@
 import CarDeallerHeader from "@/components/CarDeallerHeader.vue";
 
 export default {
-  name: "Home",
+  name: "Contact",
   components: {
     CarDeallerHeader,
   },

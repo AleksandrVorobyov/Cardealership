@@ -15,6 +15,7 @@
   --gray200: #e1e1e1;
   --gray400: #eff0f0;
   --black100: #595d60;
+  --grayBorder: #c2c2c4;
 }
 
 * {
@@ -34,23 +35,15 @@ body {
   margin: 0;
   width: 100%;
   min-height: 100vh;
+  font-family: 'Roboto';
   color: var(--black);
   line-height: 1;
   font-size: 16px;
   font-weight: 400;
-  user-select: none;
 }
 
 body.hidden {
   overflow: hidden;
-}
-
-body::before {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 0px;
-  background-color: transparent;
 }
 
 main {
