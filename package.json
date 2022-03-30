@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.5.18",
     "core-js": "^3.6.5",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",

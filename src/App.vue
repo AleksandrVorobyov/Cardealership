@@ -8,6 +8,7 @@
   --black: #000;
   --red: #ca0100;
   --redActive: #d90022;
+  --redWithWhite: #ff8181;
   --blackMain: #262626;
   --black100: #595d60;
   --gray: #737373;

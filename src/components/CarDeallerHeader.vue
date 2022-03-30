@@ -1,5 +1,5 @@
 <template lang="pug">
-#header.header
+section#header.header
   CarDeallerHeaderPanel(:info="header.panel")
   CarDeallerHeaderNav(:info="header.nav")
 </template>

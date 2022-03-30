@@ -25,6 +25,12 @@ export default {
             plusClass: "header__panel-list-item-link--decor"
           },
         ],
+        phone: {
+          number: "+7 (800) 551-94-31",
+          numberLink: "+78005519431",
+          text: "Обратный звонок",
+          icon: "phone"
+        }
       },
       nav: {
         up: {
@@ -57,7 +63,7 @@ export default {
             mainLink: "+78005519431",
             additional: "+7 (495) 292-18-67",
             additionalLink: "+74952921867",
-            icon: "phone"
+            icon: "phone-ring"
           },
           btn: {
             text: "Обратный звонок"
@@ -68,22 +74,27 @@ export default {
             {
               link: "#",
               text: "Каталог авто",
+              icon: true,
             },
             {
               link: "#",
               text: "Авто с пробегом",
+              icon: true,
             },
             {
               link: "#",
               text: "Кредит и рассрочка",
+              icon: true,
             },
             {
               link: "#",
               text: "Спецпредложения",
+              icon: true,
             },
             {
               link: "#",
               text: "Такси в кредит",
+              icon: false
             },
           ],
           btnsList: [
@@ -99,10 +110,10 @@ export default {
             },
             {
               icon: "search",
-              link: "#",
               type: "button"
             },
-          ]
+          ],
+          dropdownIcon: 'arrow-down'
         }
       }
     },
