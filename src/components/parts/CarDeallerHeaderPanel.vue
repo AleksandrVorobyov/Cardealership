@@ -9,6 +9,11 @@ section.header__panel
         h4.header__panel-list-item-title(v-else)
           SvgIcon(:name="item.img")
           span {{ item.text }}
+    .header__panel-phone
+      a.header__panel-phone-link(:href="'tel:' + info.phone.numberLink") {{ info.phone.number }}
+      button.header__panel-phone-button(type="button")
+        SvgIcon(:name="info.phone.icon")
+        span {{ info.phone.text }}
 </template>
 <script>
 import SvgIcon from "../SvgIcon.vue";
@@ -25,23 +30,22 @@ export default {
 <style scoped lang="scss">
 .header__panel {
   position: relative;
-  display: none;
   padding: 12px 0;
   overflow: hidden;
   z-index: 500;
   background: var(--gray400);
-
-  @media (min-width: 768px) {
-    display: block;
-  }
 }
 
 .header__panel-list {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: none;
+
+  @media (min-width: 769px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .header__panel-list-item-link,
@@ -85,6 +89,60 @@ export default {
 
   svg {
     fill: var(--red);
+  }
+}
+
+.header__panel-phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.header__panel-phone-link {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--blackMain);
+
+  @media (min-width: 414px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.header__panel-phone-button {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: var(--red);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  @media (min-width: 414px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+
+    @media (min-width: 414px) {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    }
   }
 }
 </style>

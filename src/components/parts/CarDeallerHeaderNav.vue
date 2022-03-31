@@ -32,5 +32,15 @@ export default {
 .header__nav-wrap {
   position: relative;
   padding: 22px 0 28px;
+
+  @media (max-width: 1270px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header__nav-wrap > div + div {
+  margin-top: 10px;
 }
 </style>

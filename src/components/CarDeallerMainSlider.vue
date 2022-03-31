@@ -1,0 +1,194 @@
+<template lang="pug">
+section.main-slider
+  .big-container
+    .main-slider-wrap
+      Splide(:options="mainSlider.options")
+        SplideSlide(v-for="item in mainSlider.slides")
+          .main-slider__item
+            .container
+              .main-slider__item-text
+                h5.main-slider__item-notification {{ item.notification }}
+                h2.main-slider__item-title {{ item.title }}
+                h3.main-slider__item-subtitle {{ item.subtitle }}
+            .main-slider__item-img
+              img(:src="require('@/assets/img/' + item.img)")
+</template>
+<script>
+import { mapGetters } from "vuex";
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+export default {
+  computed: {
+    ...mapGetters(["mainSlider"]),
+  },
+  components: {
+    Splide,
+    SplideSlide,
+  },
+};
+</script>
+<style lang="scss">
+.main-slider {
+  position: relative;
+  overflow: hidden;
+  z-index: 300;
+}
+
+.main-slider-wrap {
+  position: relative;
+}
+
+.main-slider__item {
+  position: relative;
+  padding: 35px;
+  width: 100%;
+  height: 360px;
+  background: var(--gray400);
+  border-radius: 25px;
+  overflow: hidden;
+
+  @media (min-width: 769px) {
+    padding: 80px 50px;
+    height: 600px;
+  }
+}
+
+.main-slider__item-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.main-slider__item-notification {
+  padding: 5px 10px;
+  margin-bottom: 25px;
+  width: fit-content;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--white);
+  background: var(--red);
+  border-radius: 33px;
+
+  @media (min-width: 769px) {
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.main-slider__item-title {
+  max-width: 750px;
+  margin-bottom: 24px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  color: var(--blackMain);
+
+  @media (min-width: 769px) {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+.main-slider__item-subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--gray);
+
+  @media (min-width: 769px) {
+    font-size: 29px;
+    line-height: 34px;
+  }
+}
+
+.main-slider__item-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 290px;
+  height: 280px;
+  z-index: 100;
+
+  @media (min-width: 414px) {
+    width: 520px;
+    height: 100%;
+  }
+
+  @media (min-width: 769px) {
+    width: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.main-slider-class-pagination .main-slider-class-page {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background: var(--gray);
+}
+
+.main-slider-class-pagination.splide__pagination {
+  max-width: 1430px;
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  bottom: 80px;
+
+  @media (min-width: 769px) {
+    padding: 0 15px;
+  }
+}
+
+.main-slider-class-pagination .main-slider-class-page.is-active {
+  width: 20px;
+  height: 20px;
+  transform: scale(1);
+  background: var(--red);
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    content: "";
+    border-radius: 50%;
+  }
+}
+
+.splide__arrows.main-slider-class-arrows {
+  display: none;
+
+  @media (min-width: 769px) {
+    display: block;
+  }
+}
+
+.main-slider .main-slider-class-arrow {
+  background: transparent;
+  width: auto;
+  height: auto;
+
+  svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+</style>

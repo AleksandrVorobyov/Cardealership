@@ -39,9 +39,13 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-right: 25px;
 
   @media (min-width: 1270px) {
-    justify-content: space-between;
+    width: auto;
+    margin-right: 0;
   }
 }
 
@@ -53,18 +57,26 @@ export default {
 }
 
 .header__nav-up-numbers {
-  display: flex;
+  display: none;
+  @media (min-width: 769px) {
+    display: flex;
+  }
 }
 
 .header__nav-up-menu-btn {
   position: relative;
   margin-right: 20px;
-  width: 28px;
-  height: 22px;
+  width: 22px;
+  height: 14px;
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+
+  @media (min-width: 414px) {
+    width: 28px;
+    height: 22px;
+  }
 
   &::before,
   &::after,
@@ -75,7 +87,11 @@ export default {
     content: "";
     border-radius: 6px;
     width: 100%;
-    height: 4px;
+    height: 2px;
+
+    @media (min-width: 414px) {
+      height: 4px;
+    }
   }
 
   &::before {
@@ -95,8 +111,13 @@ export default {
 .header__nav-up-menu-logo {
   position: relative;
   margin-right: 40px;
-  width: 200px;
-  height: 60px;
+  width: 130px;
+  height: 40px;
+
+  @media (min-width: 769px) {
+    width: 200px;
+    height: 60px;
+  }
 
   a {
     position: absolute;
@@ -224,7 +245,7 @@ export default {
 
 .header__nav-up-btn button {
   position: relative;
-  padding: 16px 28px;
+  padding: 16px 22px;
   background: var(--red);
   border-radius: 6px;
   cursor: pointer;
