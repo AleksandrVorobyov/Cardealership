@@ -48,10 +48,6 @@ body.hidden {
   overflow: hidden;
 }
 
-main {
-  min-height: 80vh;
-}
-
 input,
 textarea {
   font-size: 16px;
