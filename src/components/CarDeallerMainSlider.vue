@@ -30,6 +30,7 @@ export default {
 .main-slider {
   position: relative;
   overflow: hidden;
+  margin: 0px 0 20px;
   z-index: 300;
 }
 
@@ -45,6 +46,19 @@ export default {
   background: var(--gray400);
   border-radius: 25px;
   overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff80, #ffffff80),
+      url("~@/assets/img/mainSlider/slide-01-bg.jpg") right / contain no-repeat;
+    background-blend-mode: hue;
+    opacity: .4;
+    content: "";
+  }
 
   @media (min-width: 769px) {
     padding: 80px 50px;
@@ -107,7 +121,8 @@ export default {
 
 .main-slider__item-img {
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
   width: 290px;
   height: 280px;
@@ -119,13 +134,15 @@ export default {
   }
 
   @media (min-width: 769px) {
-    width: 100%;
+    width: 60%;
+    height: 50%;
   }
 
   img {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: fit-content;
     height: 100%;
     object-fit: contain;

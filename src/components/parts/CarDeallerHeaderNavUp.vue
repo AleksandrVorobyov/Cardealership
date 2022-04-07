@@ -41,7 +41,10 @@ export default {
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  margin-right: 25px;
+
+  @media (min-width: 769px) {
+    margin-right: 25px;
+  }
 
   @media (min-width: 1270px) {
     width: auto;
@@ -110,13 +113,16 @@ export default {
 
 .header__nav-up-menu-logo {
   position: relative;
-  margin-right: 40px;
   width: 130px;
   height: 40px;
 
   @media (min-width: 769px) {
     width: 200px;
     height: 60px;
+  }
+
+  @media (min-width: 1270px) {
+    margin-right: 40px;
   }
 
   a {
