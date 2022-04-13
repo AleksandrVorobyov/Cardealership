@@ -1,5 +1,5 @@
 <template lang="pug">
-section.header__nav
+section#headerNav.header__nav
   .container
     .header__nav-wrap
       CarDeallerHeaderNavUp(:infoUp="info.up")
@@ -18,6 +18,14 @@ export default {
     CarDeallerHeaderNavUp,
     CarDeallerHeaderNavDown,
   },
+  methods: {
+    headerNavFix() {
+      this.$store.commit("headerNavFix");
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.headerNavFix);
+  },
 };
 </script>
 
@@ -25,13 +33,23 @@ export default {
 .header__nav {
   position: relative;
   overflow: hidden;
-  z-index: 500;
+  z-index: 800;
   background: var(--white);
+  transition: top .8s linear;
+  top: -100%;
+}
+
+.header__nav--fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0px 0px 6px var(--gray);
 }
 
 .header__nav-wrap {
   position: relative;
-  padding: 22px 0 28px;
+  padding: 22px 0 22px;
 
   @media (max-width: 1270px) {
     display: flex;

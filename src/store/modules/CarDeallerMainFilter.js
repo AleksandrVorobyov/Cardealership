@@ -89,6 +89,7 @@ export default {
             if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
                 sliderOne.value = parseInt(sliderTwo.value) - minGap;
             }
+
             state.mainFilter.form.range.min = sliderOne.value;
 
             commit('rangeOneMin')

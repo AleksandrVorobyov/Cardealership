@@ -1,12 +1,12 @@
 <template lang="pug">
 .not-found-page
-  CarDeallerNotError
+  CarDeallerNotFound
 </template>
 
 <script>
-import CarDeallerNotError from "@/components/CarDeallerNotError.vue";
+import CarDeallerNotFound from "@/components/CarDeallerNotFound.vue";
 export default {
   name: "NotFound",
-  components: { CarDeallerNotError },
+  components: { CarDeallerNotFound },
 };
 </script>

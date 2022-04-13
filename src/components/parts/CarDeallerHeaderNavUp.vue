@@ -21,7 +21,7 @@
         :href="'tel:' + infoUp.numbers.additional"
       ) {{ infoUp.numbers.additional }}
   .header__nav-up-btn
-    button(type="button") {{ infoUp.btn.text }}
+    button.btn-shiny-anim(type="button") {{ infoUp.btn.text }}
 </template>
 <script>
 import SvgIcon from "../SvgIcon.vue";
@@ -268,22 +268,6 @@ export default {
 
 .header__nav-up-btn button:hover {
   animation: btnHover1 1s ease-in-out infinite;
-
-  &::before {
-    animation: none;
-  }
-}
-
-.header__nav-up-btn button::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  top: -180px;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  background-color: var(--white);
-  animation: shinyBtn1 4s ease-in-out infinite;
 }
 
 @keyframes btnHover1 {
@@ -294,25 +278,6 @@ export default {
 
   50% {
     transform: scale(1.2);
-  }
-}
-
-@keyframes shinyBtn1 {
-  0% {
-    -webkit-transform: scale(0) rotate(45deg);
-    opacity: 0;
-  }
-  80% {
-    -webkit-transform: scale(0) rotate(45deg);
-    opacity: 0.5;
-  }
-  81% {
-    -webkit-transform: scale(4) rotate(45deg);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(50) rotate(45deg);
-    opacity: 0;
   }
 }
 </style>

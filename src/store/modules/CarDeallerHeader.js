@@ -123,6 +123,22 @@ export default {
       return state.header;
     },
   },
-  mutations: {},
+  mutations: {
+    headerNavFix(state) {
+      let headerNav = document.getElementById('headerNav');
+      let header = document.getElementById('header');
+      let headerHeight = document.getElementById('header').offsetHeight;
+      let scrollTop = window.scrollY;
+
+      if (scrollTop > (headerHeight + 100)) {
+        header.style.paddingBottom = `${headerNav.offsetHeight}px`
+        headerNav.classList.add('header__nav--fix');
+      } else {
+        header.style.paddingBottom = '0px'
+        headerNav.classList.remove('header__nav--fix');
+
+      }
+    }
+  },
   actions: {},
 };

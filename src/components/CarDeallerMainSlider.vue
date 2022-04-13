@@ -10,8 +10,8 @@ section.main-slider
                 h5.main-slider__item-notification {{ item.notification }}
                 h2.main-slider__item-title {{ item.title }}
                 h3.main-slider__item-subtitle {{ item.subtitle }}
-            .main-slider__item-img
-              img(:src="require('@/assets/img/' + item.img)")
+              .main-slider__item-img
+                img(:src="require('@/assets/img/' + item.img)")
 </template>
 <script>
 import { mapGetters } from "vuex";
@@ -32,6 +32,11 @@ export default {
   overflow: hidden;
   margin: 0px 0 20px;
   z-index: 300;
+  padding-bottom: 60px;
+
+  @media (min-width: 540px) {
+    padding: 0;
+  }
 }
 
 .main-slider-wrap {
@@ -40,28 +45,52 @@ export default {
 
 .main-slider__item {
   position: relative;
-  padding: 35px;
+  padding: 15px;
   width: 100%;
-  height: 360px;
   background: var(--gray400);
   border-radius: 25px;
   overflow: hidden;
 
   &::before {
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 270px;
     background: linear-gradient(#ffffff80, #ffffff80),
       url("~@/assets/img/mainSlider/slide-01-bg.jpg") right / contain no-repeat;
-    background-blend-mode: hue;
-    opacity: .4;
+    background-blend-mode: multiply;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
     content: "";
+
+    @media (min-width: 769px) {
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(#ffffff80, #ffffff80),
+        url("~@/assets/img/mainSlider/slide-01-bg.jpg") right / cover no-repeat;
+    }
+
+    @media (min-width: 1240px) {
+      background: linear-gradient(#ffffff80, #ffffff80),
+        url("~@/assets/img/mainSlider/slide-01-bg.jpg") right / contain
+          no-repeat;
+    }
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: 540px) {
+    height: 360px;
+    padding: 35px;
+  }
+
+  @media (min-width: 1240px) {
     padding: 80px 50px;
+    height: 500px;
+  }
+
+  @media (min-width: 1430px) {
     height: 600px;
   }
 }
@@ -71,11 +100,12 @@ export default {
   display: flex;
   flex-direction: column;
   z-index: 200;
+  z-index: 100;
 }
 
 .main-slider__item-notification {
   padding: 5px 10px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   width: fit-content;
   display: inline-block;
   font-weight: 700;
@@ -85,7 +115,11 @@ export default {
   background: var(--red);
   border-radius: 33px;
 
-  @media (min-width: 769px) {
+  @media (min-width: 540px) {
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 1240px) {
     margin-bottom: 35px;
     font-size: 16px;
     line-height: 19px;
@@ -94,14 +128,25 @@ export default {
 
 .main-slider__item-title {
   max-width: 750px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   display: inline-block;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 30px;
+  line-height: 35px;
   color: var(--blackMain);
 
-  @media (min-width: 769px) {
+  @media (min-width: 540px) {
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 1240px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @media (min-width: 1430px) {
     font-size: 60px;
     line-height: 70px;
   }
@@ -113,29 +158,37 @@ export default {
   line-height: 21px;
   color: var(--gray);
 
-  @media (min-width: 769px) {
+  @media (min-width: 1240px) {
     font-size: 29px;
     line-height: 34px;
   }
 }
 
 .main-slider__item-img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  width: 290px;
-  height: 280px;
+  position: relative;
+  width: 100%;
+  height: 140px;
   z-index: 100;
+  margin: 0 auto;
+  z-index: 50;
 
-  @media (min-width: 414px) {
-    width: 520px;
-    height: 100%;
-  }
-
-  @media (min-width: 769px) {
+  @media (min-width: 540px) {
+    position: absolute;
+    margin: 0;
     width: 60%;
     height: 50%;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-20%);
+  }
+
+  @media (min-width: 720px) {
+    right: 50px;
+    transform: translateY(-30%);
+  }
+
+  @media (min-width: 1430px) {
+    transform: translateY(-40%);
   }
 
   img {
@@ -163,11 +216,17 @@ export default {
   padding: 0 30px;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
-  bottom: 80px;
+  justify-content: center;
+  bottom: -30px;
 
-  @media (min-width: 769px) {
+  @media (min-width: 540px) {
+    bottom: 35px;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: 1240px) {
     padding: 0 15px;
+    bottom: 80px;
   }
 }
 

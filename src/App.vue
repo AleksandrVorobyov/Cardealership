@@ -9,7 +9,7 @@
   --red: #ca0100;
   --redActive: #d90022;
   --redWithWhite: #ff8181;
-  --green: #55BC6B;
+  --green: #55bc6b;
   --blackMain: #262626;
   --black100: #595d60;
   --gray: #737373;
@@ -37,7 +37,7 @@ body {
   margin: 0;
   width: 100%;
   min-height: 100vh;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: var(--black);
   line-height: 1;
   font-size: 16px;
@@ -80,6 +80,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+}
+
 .big-container {
   max-width: 1900px;
   padding: 0 15px;
@@ -112,5 +116,46 @@ a {
 
 img {
   pointer-events: none;
+}
+
+.btn-shiny-anim {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: var(--white);
+    animation: shinyBtn1 4s ease-in-out infinite;
+    filter: blur(1px);
+  }
+
+  &:hover::before {
+    animation: none;
+  }
+}
+
+@keyframes shinyBtn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }
 </style>

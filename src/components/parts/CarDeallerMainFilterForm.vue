@@ -21,7 +21,7 @@ form.main-filter__form
       type="range",
       min="0",
       max="3000",
-      value="500",
+      value="2000",
       step="10",
       @input="slideTwo()"
     )
@@ -36,7 +36,8 @@ form.main-filter__form
     ) 
       span {{ item.title }}
       svgIcon(:name="item.icon")
-  button.main-filter__form-btn(type="submit") Показать
+  button.main-filter__form-btn.btn-shiny-anim(type="submit")
+    span Показать
 </template>
 <script>
 import svgIcon from "../SvgIcon.vue";
@@ -61,13 +62,6 @@ export default {
   mounted() {
     this.slideOne();
     this.slideTwo();
-  },
-  computed: {
-    rangeMinPrice(infoFilterForm) {
-      if (info.range.min < 1000) {
-        return info.range.min + info.range.minRu;
-      }
-    },
   },
 };
 </script>
@@ -326,10 +320,53 @@ input[type="range"]:active::-webkit-slider-thumb {
   line-height: 19px;
   color: #ffffff;
   text-transform: uppercase;
-  background: var(--red);
+  background: var(--gray);
   border-radius: 6px;
   border: none;
   outline: none;
   cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+  transition: box-shadow 0.8s linear;
+
+  span {
+    pointer-events: none;
+  }
+
+  span::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    content: "";
+    z-index: -1;
+    background: var(--red);
+    width: 50%;
+    height: 100%;
+    transition: left 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+  }
+
+  span::before {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    content: "";
+    z-index: -1;
+    background: var(--red);
+    width: 50%;
+    height: 100%;
+    transition: left 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 4px var(--gray);
+  }
+
+  &:hover span::after {
+    left: 100%;
+  }
+
+  &:hover span::before {
+    left: -50%;
+  }
 }
 </style>
