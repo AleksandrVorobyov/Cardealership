@@ -806,17 +806,24 @@ export default {
         pagination: false,
         arrows: false,
         speed: 1000,
-        padding: 20,
+        padding: 0,
         wheel: true,
         fixedWidth: 450,
         breakpoints: {
+          1430: {
+            padding: 20,
+          },
           768: {
-            fixedWidth: 290,
+            fixedWidth: 347,
             wheel: false,
+            padding: 10,
+            gap: 10,
           },
           540: {
-            fixedWidth: 350,
+            fixedWidth: 290,
             wheel: false,
+            padding: 10,
+            gap: 10,
           },
         },
       },

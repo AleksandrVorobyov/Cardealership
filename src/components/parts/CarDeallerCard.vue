@@ -54,12 +54,13 @@ export default {
   width: 100%;
   overflow: hidden;
   background: white;
-  box-shadow: 0px 0px 30px rgba(133, 147, 159, 0.3);
+  box-shadow: 0px 0px 15px rgba(133, 147, 159, 0.3);
   border-radius: 25px;
   z-index: 500;
 
   @media (min-width: 769px) {
     padding: 25px;
+    box-shadow: 0px 0px 30px rgba(133, 147, 159, 0.3);
   }
 }
 
@@ -303,14 +304,18 @@ export default {
 }
 
 .card__main-top-credit {
+  display: grid;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
   color: var(--blackMain);
+  text-align: right;
 
   @media (min-width: 769px) {
+    display: inline-block;
     font-size: 16px;
     line-height: 14px;
+    text-align: left;
   }
 }
 
@@ -323,15 +328,17 @@ export default {
 .card__footer-property-item {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px 6px 10px;
+  width: fit-content;
+  gap: 2px;
+  padding: 4px 6px 4px 6px;
   background: #fff;
   border: 1px solid var(--grayBorder);
   box-sizing: border-box;
   border-radius: 20px;
   transition: border 0.4s linear;
 
-  @media (min-width: 769px) {
+  @media (min-width: 541px) {
+    gap: 5px;
     padding: 7px 12px 7px 8px;
   }
 }
@@ -349,8 +356,8 @@ export default {
 }
 
 .card__footer-property-item-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 
   @media (min-width: 769px) {
     width: 20px;
@@ -428,7 +435,6 @@ export default {
   }
 
   &:hover {
-    transform: scale(1.1);
     text-decoration: underline;
   }
 }

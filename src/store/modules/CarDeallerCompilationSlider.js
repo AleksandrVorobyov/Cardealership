@@ -16,20 +16,26 @@ export default {
         wheel: true,
         fixedWidth: 447,
         fixedHeight: 317,
+        padding: 0,
         breakpoints: {
+          1430: {
+            padding: 20,
+          },
           768: {
             fixedWidth: 346,
             fixedHeight: 200,
-            gap: 15,
+            gap: 10,
             arrows: false,
             wheel: false,
+            padding: 10,
           },
           540: {
             fixedWidth: 290,
             fixedHeight: 200,
-            gap: 15,
+            gap: 10,
             arrows: false,
             wheel: false,
+            padding: 10,
           },
         },
         classes: {

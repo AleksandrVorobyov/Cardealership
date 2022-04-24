@@ -67,8 +67,14 @@ export default {
     display: none;
   }
 
+  @media (min-width: 769px) {
+    .card {
+      margin: 20px 0;
+    }
+  }
+
   .card {
-    margin: 20px 0;
+    margin: 10px 0;
   }
 }
 
@@ -77,16 +83,18 @@ export default {
 }
 
 .card-stock__title {
-  margin-bottom: 30px;
+  padding: 0px 10px;
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
   line-height: 35px;
-  text-align: center;
   color: var(--blackMain);
 
   @media (min-width: 769px) {
     font-size: 40px;
     line-height: 47px;
+    text-align: center;
+    padding: 0;
   }
 
   @media (min-width: 1430px) {

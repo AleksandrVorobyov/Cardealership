@@ -28,10 +28,24 @@ export default {
 <style lang="scss">
 .compilation-slider {
   position: relative;
-  margin: 50px 0;
+  margin: 20px 0;
   overflow: hidden;
   z-index: 500;
   background: var(--white);
+
+  @media (min-width: 769px) {
+    margin: 50px 0;
+  }
+}
+
+.compilation-slider .container {
+  padding: 0;
+  max-width: 100%;
+
+  @media (min-width: 1430px) {
+    max-width: 1430px;
+    padding: 0 15px;
+  }
 }
 
 .compilation-slider-wrap {
@@ -43,6 +57,11 @@ export default {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 20px;
+  padding: 0 10px;
+
+  @media (min-width: 1430px) {
+    padding: 0;
+  }
 
   @media (min-width: 541px) {
     flex-direction: row;
@@ -57,6 +76,7 @@ export default {
     justify-content: flex-start;
     width: auto;
     margin-bottom: 50px;
+    padding: 0 20px;
   }
 }
 
