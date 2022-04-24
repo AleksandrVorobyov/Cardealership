@@ -35,7 +35,7 @@ export default {
   overflow: hidden;
   z-index: 800;
   background: var(--white);
-  transition: top .8s linear;
+  transition: top 0.8s linear;
   top: -100%;
 }
 
@@ -59,6 +59,8 @@ export default {
 }
 
 .header__nav-wrap > div + div {
-  margin-top: 10px;
+  @media (min-width: 769px) {
+    margin-top: 10px;
+  }
 }
 </style>

@@ -8,17 +8,12 @@ section.compilation-slider
       .compilation-slider__slider
         Splide(:options="compilationSlider.sliderOptions")
           SplideSlide(v-for="item in compilationSlider.slides")
-            .compilation-slide
-              img.compilation-slide__img(
-                :src="item.src",
-                :alt="item.alt"
-              )
-              h5.compilation-slide__title {{ item.title }}
-              router-link.compilation-slide__link(:to="item.href") {{ item.link }}
+            CarDeallerCompilationSlide(:slide="item")
 </template>
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import CarDeallerCompilationSlide from "./parts/CarDeallerCompilationSlide.vue";
 export default {
   computed: {
     ...mapGetters(["compilationSlider"]),
@@ -26,19 +21,125 @@ export default {
   components: {
     Splide,
     SplideSlide,
+    CarDeallerCompilationSlide,
   },
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .compilation-slider {
   position: relative;
-  padding: 100px 0;
+  margin: 50px 0;
   overflow: hidden;
   z-index: 500;
-  background: white;
+  background: var(--white);
 }
 
 .compilation-slider-wrap {
   position: relative;
+}
+
+.compilation-slider__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  @media (min-width: 541px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 769px) {
+    justify-content: flex-start;
+    width: auto;
+    margin-bottom: 50px;
+  }
+}
+
+.compilation-slider__nav-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: var(--blackMains);
+
+  @media (min-width: 769px) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.compilation-slider__nav-link {
+  position: relative;
+  padding: 4px 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--white);
+  background: var(--red);
+  border-radius: 11px;
+  width: fit-content;
+
+  @media (min-width: 769px) {
+    padding: 6px 14px;
+    font-size: 16px;
+  }
+}
+
+.compilationSlider-class-arrows {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.splide__arrow.compilationSlider-class-arrow {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--red);
+  opacity: 1;
+  transition: background 0.4s linear, box-shadow 0.4s linear;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: var(--white);
+    transition: fill 0.4s linear;
+    height: 16px;
+    width: 14px;
+  }
+}
+
+.splide__arrow.compilationSlider-class-arrow.compilationSlider-class-prev {
+  svg {
+    transform: translate(calc(-50% - 3px), -50%) rotate(180deg);
+  }
+}
+
+.splide__arrow.compilationSlider-class-arrow.compilationSlider-class-next {
+  svg {
+    transform: translate(calc(-50% + 3px), -50%);
+  }
+}
+
+.splide__arrow.compilationSlider-class-arrow:hover {
+  background: var(--white);
+  box-shadow: 0px 0px 30px rgba(133, 147, 159, 0.7);
+  opacity: 1;
+
+  svg {
+    fill: var(--blackMain);
+  }
 }
 </style>
