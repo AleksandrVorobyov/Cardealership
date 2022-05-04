@@ -2,8 +2,10 @@ export default {
     state: {
         mainSlider: {
             options: {
-                rewind: true,
+                type: "loop",
                 gap: "1rem",
+                speed: 1600,
+                easing: "cubic-bezier( 0.51, 0.27, 0.22, 0.65 )",
                 classes: {
                     arrows: 'splide__arrows main-slider-class-arrows',
                     arrow: 'splide__arrow main-slider-class-arrow',

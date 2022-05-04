@@ -7,8 +7,8 @@ section.main-filter
 </template>
 <script>
 import { mapGetters } from "vuex";
-import CarDeallerMainFilterList from "./parts/CarDeallerMainFilterList.vue";
-import CarDeallerMainFilterForm from "./parts/CarDeallerMainFilterForm.vue";
+import CarDeallerMainFilterList from "./parts/MainFilterList.vue";
+import CarDeallerMainFilterForm from "./parts/MainFilterForm.vue";
 
 export default {
   computed: {

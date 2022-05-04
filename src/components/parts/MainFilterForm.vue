@@ -36,7 +36,7 @@ form.main-filter__form
     ) 
       span {{ item.title }}
       svgIcon(:name="item.icon")
-  button.main-filter__form-btn.btn-shiny-anim(type="submit")
+  button.main-filter__form-btn.btn-shiny-anim.btn-main-red(type="submit")
     span Показать
 </template>
 <script>
@@ -312,7 +312,7 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .main-filter__form-btn {
   position: relative;
-  padding: 16px 20px;
+  height: 65px;
   text-align: center;
   width: 100%;
   font-weight: 700;
@@ -331,42 +331,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
   span {
     pointer-events: none;
-  }
-
-  span::after {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    content: "";
-    z-index: -1;
-    background: var(--red);
-    width: 50%;
-    height: 100%;
-    transition: left 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
-  }
-
-  span::before {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    content: "";
-    z-index: -1;
-    background: var(--red);
-    width: 50%;
-    height: 100%;
-    transition: left 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
-  }
-
-  &:hover {
-    box-shadow: 0px 0px 4px var(--gray);
-  }
-
-  &:hover span::after {
-    left: 100%;
-  }
-
-  &:hover span::before {
-    left: -50%;
   }
 }
 </style>

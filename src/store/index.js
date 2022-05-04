@@ -5,6 +5,8 @@ import CarDeallerMainFilter from "./modules/CarDeallerMainFilter.js"
 import CarDeallerCardStock from "./modules/CarDeallerCardStock.js"
 import CarDeallerNotFound from "./modules/CarDeallerNotFound.js"
 import CarDeallerCompilationSlider from "./modules/CarDeallerCompilationSlider.js"
+import CarDeallerFormBanner from "./modules/CarDeallerFormBanner.js"
+import CarDeallerSpecialOfferSlider from "./modules/CarDeallerSpecialOfferSlider.js"
 
 export default createStore({
   state: {
@@ -20,5 +22,7 @@ export default createStore({
     CarDeallerCardStock: CarDeallerCardStock,
     CarDeallerNotFound: CarDeallerNotFound,
     CarDeallerCompilationSlider: CarDeallerCompilationSlider,
+    CarDeallerFormBanner: CarDeallerFormBanner,
+    CarDeallerSpecialOfferSlider: CarDeallerSpecialOfferSlider,
   }
 })

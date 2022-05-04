@@ -13,7 +13,7 @@ section.compilation-slider
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import CarDeallerCompilationSlide from "./parts/CarDeallerCompilationSlide.vue";
+import CarDeallerCompilationSlide from "./parts/CompilationSlide.vue";
 export default {
   computed: {
     ...mapGetters(["compilationSlider"]),
@@ -34,7 +34,7 @@ export default {
   background: var(--white);
 
   @media (min-width: 769px) {
-    margin: 50px 0;
+    margin: 40px 0;
   }
 }
 
@@ -75,7 +75,7 @@ export default {
   @media (min-width: 769px) {
     justify-content: flex-start;
     width: auto;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     padding: 0 20px;
   }
 }
@@ -111,7 +111,7 @@ export default {
 
 .compilationSlider-class-arrows {
   position: absolute;
-  top: -50px;
+  top: -68px;
   right: 0;
   display: flex;
   gap: 10px;

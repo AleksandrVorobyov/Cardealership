@@ -12,15 +12,16 @@ section.card-stock
       Splide(:options="cardStock.sliderOptions")
         SplideSlide(v-for="item in cardStock.cards")
           CarDeallerCard(:info="item")
-      button.card-stock__btn.btn-shiny-anim(
+      button.card-stock__btn.btn-shiny-anim.btn-main-red(
         type="button",
         @click="moreCards()"
-      ) {{ cardStock.btn }}
+      ) 
+        span {{ cardStock.btn }}
 </template>
 <script>
 import { mapGetters } from "vuex";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import CarDeallerCard from "./parts/CarDeallerCard.vue";
+import CarDeallerCard from "./parts/CarCard.vue";
 export default {
   computed: {
     ...mapGetters(["cardStock", "cardStockOutput"]),
@@ -122,12 +123,12 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 20px;
+    height: 65px;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     color: white;
-    background: var(--red);
+    background: var(--gray);
     cursor: pointer;
     border: none;
     border-radius: 6px;

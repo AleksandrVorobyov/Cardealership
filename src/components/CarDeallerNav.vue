@@ -2,21 +2,21 @@
 section#headerNav.header__nav
   .container
     .header__nav-wrap
-      CarDeallerHeaderNavUp(:infoUp="info.up")
-      CarDeallerHeaderNavDown(:infoDown="info.down")
+      HeaderNavUp(:infoUp="info.up")
+      HeaderNavDown(:infoDown="info.down")
 </template>
 
 <script>
-import CarDeallerHeaderNavUp from "./CarDeallerHeaderNavUp";
-import CarDeallerHeaderNavDown from "./CarDeallerHeaderNavDown";
+import HeaderNavUp from "./parts/HeaderNavUp";
+import HeaderNavDown from "./parts/HeaderNavDown";
 
 export default {
   props: {
     info: Object,
   },
   components: {
-    CarDeallerHeaderNavUp,
-    CarDeallerHeaderNavDown,
+    HeaderNavUp,
+    HeaderNavDown,
   },
   methods: {
     headerNavFix() {
@@ -35,8 +35,6 @@ export default {
   overflow: hidden;
   z-index: 800;
   background: var(--white);
-  transition: top 0.8s linear;
-  top: -100%;
 }
 
 .header__nav--fix {
@@ -45,6 +43,7 @@ export default {
   left: 0;
   width: 100%;
   box-shadow: 0px 0px 6px var(--gray);
+  animation: navTopAnim 1s linear 0s;
 }
 
 .header__nav-wrap {
@@ -61,6 +60,28 @@ export default {
 .header__nav-wrap > div + div {
   @media (min-width: 769px) {
     margin-top: 10px;
+  }
+}
+
+@keyframes navTopAnim {
+  0% {
+    top: -100%;
+  }
+
+  70% {
+    top: 20px;
+  }
+
+  80% {
+    top: 0px;
+  }
+
+  90% {
+    top: 10px;
+  }
+
+  100% {
+    top: 0px;
   }
 }
 </style>

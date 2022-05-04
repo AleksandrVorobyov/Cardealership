@@ -1,19 +1,19 @@
 <template lang="pug">
 section#header.header
   CarDeallerHeaderPanel(:info="header.panel")
-  CarDeallerHeaderNav(:info="header.nav")
+  CarDeallerNav(:info="header.nav")
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import CarDeallerHeaderPanel from "./parts/CarDeallerHeaderPanel.vue";
-import CarDeallerHeaderNav from "./parts/CarDeallerHeaderNav.vue";
+import CarDeallerHeaderPanel from "./parts/HeaderPanel.vue";
+import CarDeallerNav from "./CarDeallerNav.vue";
 
 export default {
   name: "CarDeallerHeader",
   components: {
     CarDeallerHeaderPanel,
-    CarDeallerHeaderNav,
+    CarDeallerNav,
   },
   computed: {
     ...mapGetters(["header"]),
@@ -22,4 +22,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.header {
+  position: relative;
+}
 </style>

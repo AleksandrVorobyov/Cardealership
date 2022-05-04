@@ -801,7 +801,7 @@ export default {
       activeCards: [],
       sliderOptions: {
         rewind: false,
-        gap: 15,
+        gap: 30,
         perPage: 1,
         pagination: false,
         arrows: false,

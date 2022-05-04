@@ -42,6 +42,7 @@ body {
   line-height: 1;
   font-size: 16px;
   font-weight: 400;
+  display: block;
 }
 
 body.hidden {
@@ -54,6 +55,12 @@ textarea {
   line-height: 1.5;
   resize: vertical;
   -webkit-appearance: none;
+}
+
+header,
+main,
+footer {
+  display: grid;
 }
 
 h1,
@@ -116,6 +123,72 @@ p {
 
 img {
   pointer-events: none;
+}
+
+.btn-main-red,
+.btn-main-gray {
+  position: relative;
+  transition: box-shadow 0.8s linear;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+
+  span::after {
+    position: absolute;
+    top: 0;
+    right: 0%;
+    content: "";
+    z-index: -1;
+    width: calc(50% + 1px);
+    height: 100%;
+    transition: right 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+  }
+
+  span::before {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    content: "";
+    z-index: -1;
+    width: calc(50% + 1px);
+    height: 100%;
+    transition: left 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 4px var(--gray);
+  }
+
+  &:hover span::after {
+    right: calc(-50% + -1px);
+  }
+
+  &:hover span::before {
+    left: calc(-50% + -1px);
+  }
+}
+
+.btn-main-red {
+  span::after,
+  span::before {
+    background: var(--red);
+  }
+}
+.btn-main-gray {
+  span::after,
+  span::before {
+    background: var(--grayBorder);
+  }
 }
 
 .btn-shiny-anim {

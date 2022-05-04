@@ -2,9 +2,13 @@
 .compilation-slide
   .compilation-slide-info
     h5.compilation-slide__title(v-html="slide.title")
-    router-link.compilation-slide__link(:to="slide.href") {{ slide.link }}
+    router-link.compilation-slide__link.btn-main-red(:to="slide.href") 
+      span {{ slide.link }}
   .compilation-slide__img
-    img(:src="require('@/assets/img/' + slide.src)", :alt="slide.alt")
+    img(
+      :data-splide-lazy="require('@/assets/img/' + slide.src)",
+      :alt="slide.alt",
+    )
 </template>
 <script>
 export default {
@@ -45,7 +49,7 @@ export default {
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: #fff;
+  color: var(--white);
   z-index: 50;
 
   @media (min-width: 769px) {
@@ -55,18 +59,25 @@ export default {
 }
 
 .compilation-slide__link {
-  padding: 12px 30px;
-  background: var(--red);
+  display: inline-block;
+  height: 40px;
+  width: 150px;
+  background: var(--grayBorder);
   border-radius: 6px;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  color: #fff;
+  color: var(--white);
+  transition: color 0.4s linear;
   z-index: 50;
 
   @media (min-width: 769px) {
     font-size: 14px;
     line-height: 16px;
+  }
+
+  &:hover {
+    color: var(--blackMAin);
   }
 }
 
