@@ -68,16 +68,21 @@ export default {
 
 .specialOfferSlider-class-arrows {
   position: absolute;
-  top: -68px;
-  right: 0;
+  top: -93px;
+  right: 20px;
   display: flex;
   gap: 10px;
+
+  @media (min-width: 1430px) {
+    right: 0;
+  }
 }
 
 .splide__arrow.specialOfferSlider-class-arrow {
   position: relative;
   top: 0;
   left: 0;
+  transform: translate(0);
   width: 48px;
   height: 48px;
   border-radius: 6px;

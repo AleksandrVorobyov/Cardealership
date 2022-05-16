@@ -68,7 +68,6 @@ export default {
                         wheel: false,
                         padding: 10,
                         autoplay: false,
-                        lazyLoad: false,
                         speed: 1200,
                     },
                 },
