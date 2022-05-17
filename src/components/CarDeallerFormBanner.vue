@@ -48,9 +48,13 @@ export default {
 <style lang="scss">
 .form-banner {
   position: relative;
-  margin: 40px 0 35px;
+  margin: 20px;
   overflow: hidden;
   z-index: 500;
+
+  @media (min-width: 769px) {
+    margin: 40px 0;
+  }
 }
 
 .form-banner-wrap {

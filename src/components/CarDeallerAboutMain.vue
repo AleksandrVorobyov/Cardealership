@@ -38,10 +38,14 @@ export default {
 <style scoped lang="scss">
 .about-main {
   position: relative;
-  padding: 40px 0;
+  margin: 20px 0;
   overflow: hidden;
   z-index: 500;
   background: white;
+
+  @media (min-width: 769px) {
+    margin: 40px 0;
+  }
 }
 
 .about-main-wrap {

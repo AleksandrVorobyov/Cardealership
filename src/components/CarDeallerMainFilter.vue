@@ -25,7 +25,11 @@ export default {
   position: relative;
   overflow: hidden;
   z-index: 300;
-  margin: 20px 0 30px;
+  margin: 20px 0;
+
+  @media (min-width: 540px) {
+    margin: 40px 0;
+  }
 }
 
 .main-filter-wrap {

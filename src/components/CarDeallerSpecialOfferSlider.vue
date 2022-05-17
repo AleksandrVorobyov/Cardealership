@@ -28,10 +28,14 @@ export default {
 <style lang="scss">
 .special-offer {
   position: relative;
-  margin: 40px 0;
+  margin: 20px 0;
   overflow: hidden;
   z-index: 500;
   background: white;
+
+  @media (min-width: 540px) {
+    margin: 40px 0;
+  }
 }
 
 .special-offer .container {

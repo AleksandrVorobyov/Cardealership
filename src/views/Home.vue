@@ -10,6 +10,7 @@
     CarDeallerFormBanner
     CarDeallerSpecialOfferSlider
     CarDeallerAboutMain
+    CarDeallerContactMain
 </template>
 
 <script>
@@ -21,6 +22,7 @@ import CarDeallerCompilationSlider from "@/components/CarDeallerCompilationSlide
 import CarDeallerFormBanner from "@/components/CarDeallerFormBanner.vue";
 import CarDeallerSpecialOfferSlider from "@/components/CarDeallerSpecialOfferSlider.vue";
 import CarDeallerAboutMain from "@/components/CarDeallerAboutMain.vue";
+import CarDeallerContactMain from "@/components/CarDeallerContactMain.vue";
 
 export default {
   name: "Home",
@@ -33,6 +35,7 @@ export default {
     CarDeallerFormBanner,
     CarDeallerSpecialOfferSlider,
     CarDeallerAboutMain,
+    CarDeallerContactMain,
   },
 };
 </script>

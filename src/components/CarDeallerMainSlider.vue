@@ -30,12 +30,13 @@ export default {
 .main-slider {
   position: relative;
   overflow: hidden;
-  margin: 0px 0 20px;
+  margin: 20px 0;
   z-index: 300;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 
   @media (min-width: 540px) {
-    padding: 0;
+    margin: 40px 0;
+    padding-bottom: 60px;
   }
 }
 

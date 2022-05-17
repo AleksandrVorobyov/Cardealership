@@ -63,6 +63,10 @@ footer {
   display: grid;
 }
 
+header {
+  z-index: 2000;
+}
+
 h1,
 h2,
 h3,

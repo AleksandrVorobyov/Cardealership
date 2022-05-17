@@ -51,6 +51,10 @@ export default {
   overflow: hidden;
   z-index: 500;
   background: white;
+
+  @media (min-width: 769px) {
+    margin: 40px 0;
+  }
 }
 
 .container {
